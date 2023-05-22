@@ -28,23 +28,19 @@ router.put("/:inmuebleId", async (req, res) => {
     });
     res.json(result);
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //DELETE
-router.delete('/:InmuebleId', (req, res) => {
-    res.send('Borrado');
-});
+router.delete("/:inmuebleId", async (req, res) => {
+    const { inmuebleId } = req.params;
+  
+    try {
+      const result = await Inmueble.findByIdAndDelete(inmuebleId);
+      if (!result) {
+        return res.json({ fatal: "El id de inmueble no existe" });
+      }
+      res.json(result);
+    } catch (error) {
+      res.json({ fatal: error.message });
+    }
+  });
 
 module.exports = router;

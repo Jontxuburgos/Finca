@@ -4,13 +4,13 @@ POST http://localhost:3000/api/inmuebles
 Content-Type: application/json
 
 {
-    "piso": 3,
-    "letra": "C",
+    "piso": 5,
+    "letra": "D",
     "extension": 100,
-    "habitaciones": 3,
-    "alquilado": true,
-    "propietario": "Marcos",
-    "email": "marcos@correo.com"
+    "habitaciones": 4,
+    "alquilado": false,
+    "propietario": "Luis",
+    "email": "luis@correo.com"
 }
 
 ###
@@ -22,4 +22,4 @@ Content-Type: application/json
     "email": "marcos2@correo.com"
 }
 ###
-DELETE http://localhost:3000/api/inmuebles/78
+DELETE http://localhost:3000/api/inmuebles/646b75b7768aed3718246821
