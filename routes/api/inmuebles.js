@@ -19,25 +19,29 @@ router.post('/', async (req, res) => {
         res.json({ fatal: error.message });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //PUT
-router.put('/:InmuebleId', (req, res) => {
-    res.send('Actualiza');
-});
+router.put("/:inmuebleId", async (req, res) => {
+    const { inmuebleId } = req.params;
+  
+    const result = await Inmueble.findByIdAndUpdate(inmuebleId, req.body, {
+      new: true,
+    });
+    res.json(result);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //DELETE
 router.delete('/:InmuebleId', (req, res) => {
     res.send('Borrado');

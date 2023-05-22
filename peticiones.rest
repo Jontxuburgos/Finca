@@ -12,7 +12,14 @@ Content-Type: application/json
     "propietario": "Marcos",
     "email": "marcos@correo.com"
 }
+
 ###
-PUT http://localhost:3000/api/inmuebles/12
+PUT http://localhost:3000/api/inmuebles/646b722ecdcb20a890b80c87
+Content-Type: application/json
+
+{
+    "alquilado": false,
+    "email": "marcos2@correo.com"
+}
 ###
 DELETE http://localhost:3000/api/inmuebles/78
